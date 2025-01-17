@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { addToCart } from '../api/api';
+import { addToCart, fetchCart } from '../api/api';
 
 const CartContext = createContext();
 const BASE_URL = 'https://shopinfie.com/wp-json/wc/v3';
@@ -9,21 +9,8 @@ const CONSUMER_SECRET = 'cs_741fe651bebb7f10926396cbb9af8f2c85872af9';
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  const fetchCart = async () => {
-    try {
-      const response = await fetch(
-        `${BASE_URL}/cart?consumer_key=${CONSUMER_KEY}&consumer_secret=${CONSUMER_SECRET}`
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setCartItems(data);
-    } catch (error) {
-      console.error('Error fetching cart:', error);
-    }
-  };
 
+  fetchCart
 
   const handleAddToCart = async (productId) => {
     try {

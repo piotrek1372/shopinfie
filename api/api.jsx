@@ -7,6 +7,21 @@ const LOGIN_ENDPOINT = "/jwt-auth/v1/token";
 const PRODUCTS_ENDPOINT = "/wc/v3/products";
 const CART_ENDPOINT = "/wc/v3/cart";
 
+export const fetchCart = async () => {
+    try {
+      const response = await fetch(
+        `${BASE_URL}${CART_ENDPOINT}?consumer_key=${CONSUMER_KEY}&consumer_secret=${CONSUMER_SECRET}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setCartItems(data);
+    } catch (error) {
+      console.error('Error fetching cart:', error);
+    }
+  };
+
 // Klucze API WooCommerce (przenieś je do zmiennych środowiskowych!)
 const CONSUMER_KEY = process.env.CK;
 const CONSUMER_SECRET = process.env.CS;
