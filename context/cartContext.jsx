@@ -2,9 +2,6 @@ import React, { createContext, useContext, useState } from 'react';
 import { addToCart, fetchCart } from '../api/api';
 
 const CartContext = createContext();
-const BASE_URL = 'https://shopinfie.com/wp-json/wc/v3';
-const CONSUMER_KEY = 'ck_ec118eb483ed40346c3afff1e60c74aa8e6f3065';
-const CONSUMER_SECRET = 'cs_741fe651bebb7f10926396cbb9af8f2c85872af9';
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
