@@ -10,5 +10,7 @@ export default function ShopScreen() {
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 })

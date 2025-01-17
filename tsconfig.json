@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "context/cartContext.jsx", "app/(tabs)/index.tsj", "app/(tabs)/index.jsx", "app/(tabs)/cart.jsx", "app/(tabs)/account.jsx", "app/(tabs)/_layout.jsx", "app/_layout.jsx", "app/not_found.jsx", "app/(stack)/product.jsx", "app.jsx", "api/api.jsx", "components/Products.jsx"  ]
 }
