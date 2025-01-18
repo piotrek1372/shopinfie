@@ -6,6 +6,8 @@ const BASE_URL = 'https://shopinfie.com/wp-json';
 const LOGIN_ENDPOINT = "/jwt-auth/v1/token";
 const PRODUCTS_ENDPOINT = "/wc/v3/products";
 const CART_ENDPOINT = "/wc/v3/cart";
+const CONSUMER_KEY = process.env.CK;
+const CONSUMER_SECRET = process.env.CS;
 
 export const fetchCart = async () => {
     try {
@@ -21,10 +23,6 @@ export const fetchCart = async () => {
       console.error('Error fetching cart:', error);
     }
   };
-
-// Klucze API WooCommerce (przenieś je do zmiennych środowiskowych!)
-const CONSUMER_KEY = process.env.CK;
-const CONSUMER_SECRET = process.env.CS;
 
 // *** 1. Funkcja logowania użytkownika ***
 export const loginToWooCommerce = async (email, password) => {

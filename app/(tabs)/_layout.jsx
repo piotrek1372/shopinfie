@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import { AntDesign, Entypo } from "@expo/vector-icons";
-import { useCart } from "../../context/cartContext";
+import { cartItems } from "../../context/cartContext";
+import { StyleSheet, View } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -22,15 +23,16 @@ export default function TabLayout() {
       <Tabs.Screen
         name="cart"
         options={{
+          title: "Koszyk",
           tabBarIcon: ({ color }) => (
             <View>
-              <AntDesign size={28} name="shoppingcart" color={color} />
-              {cartItems.length > 0 && (
-                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>{cartItems.length}</Text>
-                </View>
-              )}
-            </View>
+            <AntDesign size={28} name="shoppingcart" color={color} />
+            {cartItems && cartItems.length > 0 &&(
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>{cartItems.length}</Text>
+              </View>
+            )}
+          </View>
           ),
         }}
       />

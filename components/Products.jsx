@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchProducts } from '../api/api';
+import { StyleSheet } from 'react-native';
 
 const Products = ({ token }) => {
   const [products, setProducts] = useState([]);
